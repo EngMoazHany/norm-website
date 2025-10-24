@@ -1,0 +1,50 @@
+.splash {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  animation: fadeOutBg 1s ease forwards 3s;
+}
+
+.splashLogo {
+  width: 300px;
+  opacity: 0;
+  transform: scale(1.4); /* ✅ يبدأ كبير */
+  animation:
+    shrinkIn 1s ease forwards,          /* دخول عكسي */
+    fadeOut 1s ease forwards 2s;        /* خروج عادي بعد 2s */
+}
+
+@keyframes shrinkIn {
+  0% {
+    opacity: 0;
+    transform: scale(1.4);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+}
+
+@keyframes fadeOutBg {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}

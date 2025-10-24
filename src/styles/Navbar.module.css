@@ -1,0 +1,93 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: 20px auto;
+  padding: 15px 30px;
+  background-color: rgba(0, 0, 0, 0.4); /* شفاف */
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  z-index: 1000;
+  width: 90%;
+  max-width: 1200px;
+  transition: background 0.3s ease;
+}
+
+.navdiv {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo img {
+  width: 120px;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.logo img:hover {
+  transform: scale(1.05);
+}
+
+.navLinks {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+
+.navLink {
+  color: white;
+  font-size: 18px;
+  font-weight: 500;
+  position: relative;
+  transition: color 0.3s;
+}
+
+.navLink::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #e60000;
+  transition: width 0.3s;
+}
+
+.navLink:hover::after {
+  width: 100%;
+}
+
+.menuToggle {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+}
+/* === Responsive Design === */
+@media (max-width: 768px) {
+  .navLinks {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background: rgba(0, 0, 0, 0.9);
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    padding: 20px 0;
+    border-radius: 0 0 12px 12px;
+    display: none;
+  }
+
+  .showMenu {
+    display: flex;
+  }
+
+  .menuToggle {
+    display: block;
+  }
+}
