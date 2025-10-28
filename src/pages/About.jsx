@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import pdfFile from "../assets/Company Profile.pdf";
-import bg from "../assets/Photo1.png";
 
-const Services = () => {
+const About = () => {
   const [downloaded, setDownloaded] = useState(false);
 
   const handleDownload = () => {
@@ -18,32 +17,18 @@ const Services = () => {
   return (
     <section
       style={{
-        backgroundImage: `url(${bg})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
+        backgroundColor: "#000", // ✅ خلفية سوداء فقط
         minHeight: "100vh",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
         textAlign: "center",
         color: "white",
+        flexDirection: "column",
+        padding: "0 20px",
       }}
     >
-      <div
-        style={{
-          position: "relative",
-          zIndex: 2,
-          padding: "40px",
-          borderRadius: "20px",
-          background: "rgba(0, 0, 0, 0.25)",
-          border: "1px solid rgba(255, 255, 255, 0.2)",
-          boxShadow: "0 0 20px rgba(0, 0, 0, 0.3)",
-        }}
-      >
-        {!downloaded ? (
-          <>
-            <h2
+    <h2
               style={{
                 color: "#ffffff",
                 fontSize: "2rem",
@@ -58,42 +43,43 @@ const Services = () => {
               حمّل الملف وخلّنا نحكيك الصورة كاملة
             </h2>
 
-            <button
-              onClick={handleDownload}
-              style={{
-                backgroundColor: "#e60000",
-                color: "white",
-                border: "none",
-                padding: "12px 25px",
-                borderRadius: "10px",
-                fontSize: "1.1rem",
-                cursor: "pointer",
-                transition: "0.3s",
-              }}
-              onMouseOver={(e) =>
-                (e.target.style.backgroundColor = "#b80d0d")
-              }
-              onMouseOut={(e) =>
-                (e.target.style.backgroundColor = "#e60000")
-              }
-            >
-              تحميل الملف 📄
-            </button>
-          </>
-        ) : (
-          <h3
-            style={{
-              color: "#bfa97f",
-              textShadow: "0 0 10px rgba(0,0,0,0.8)",
-              fontSize: "1.3rem",
-            }}
-          >
-            ✅ تم بدء تحميل الملف بنجاح
-          </h3>
-        )}
-      </div>
+      <button
+        onClick={handleDownload}
+        style={{
+          backgroundColor: "#e60000",
+          color: "white",
+          border: "none",
+          padding: "12px 25px",
+          borderRadius: "10px",
+          fontSize: "1.1rem",
+          cursor: "pointer",
+          transition: "0.3s",
+        }}
+        onMouseOver={(e) => (e.target.style.backgroundColor = "#b80d0d")}
+        onMouseOut={(e) => (e.target.style.backgroundColor = "#e60000")}
+      >
+        تحميل الملف 📄
+      </button>
+
+      {/* ✅ رسالة النجاح */}
+      {downloaded && (
+        <p
+          style={{
+            marginTop: "15px",
+            color: "#f1f4f3ff",
+            fontSize: "1.1rem",
+            fontWeight: "500",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            gap: "8px",
+          }}
+        >
+          ✅ تم بدء تحميل الملف بنجاح
+        </p>
+      )}
     </section>
   );
 };
 
-export default Services;
+export default About;

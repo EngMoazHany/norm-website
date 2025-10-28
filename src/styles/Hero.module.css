@@ -28,7 +28,7 @@
 
 .ctaButton {
   padding: 15px 30px;
-  background-color: #e60000;
+  background-color: #d72121;
   color: white;
   border-radius: 30px;
   font-weight: bold;
@@ -44,7 +44,7 @@
   font-size: 3.5rem;
   font-weight: 800;
   text-transform: uppercase;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+
   margin-bottom: 20px;
   font-family: 'Poppins', sans-serif;
 }

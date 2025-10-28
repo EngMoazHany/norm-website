@@ -13,8 +13,11 @@ const Navbar = () => {
   return (
     <nav className={styles.navbar}>
       <div className={styles.navdiv}>
+        {/* 👇 نزلنا اللوجو شوي */}
         <div className={styles.logo}>
-          <Link to="/"><img src={logo} alt="شعار نورم" /></Link>
+          <Link to="/">
+            <img src={logo} alt="شعار نورم" className={styles.logoImage} />
+          </Link>
         </div>
 
         {/* زر الموبايل */}
@@ -26,7 +29,6 @@ const Navbar = () => {
         <ul className={`${styles.navLinks} ${isOpen ? styles.showMenu : ''}`}>
           <li><Link className={styles.navLink} to="/">الرئيسية</Link></li>
           <li><Link className={styles.navLink} to="/about">من نحن</Link></li>
-          <li><Link className={styles.navLink} to="/services">الخدمات</Link></li>
         </ul>
 
         {/* تواصل معنا — ظاهر دايمًا */}
