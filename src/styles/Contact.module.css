@@ -2,7 +2,7 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  padding: 140px 20px 100px; /* ✅ علشان تحت الـ Navbar */
+  padding: 140px 20px 100px;
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -10,7 +10,7 @@
 }
 
 .container {
-  background: rgba(0, 0, 0, 0.5); /* شفافية خلف الفورم */
+  background: rgba(0, 0, 0, 0.5);
   padding: 40px;
   border-radius: 12px;
   max-width: 500px;
@@ -20,12 +20,60 @@
   color: white;
 }
 
-h2 {
+.title {
   text-align: center;
   margin-bottom: 30px;
   font-size: 2rem;
   font-weight: 700;
-  letter-spacing: 1px;
+}
+
+.contactInfo {
+  text-align: center;
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.contactInfo p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 1.05rem;
+}
+
+.contactInfo a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.contactInfo a:hover {
+  color: #ff3333;
+}
+
+.icon {
+  font-size: 1.2rem;
+  color: #ffffff;
+}
+
+/* WhatsApp icon */
+.whatsapp {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 6px;
+  font-size: 1.5rem;
+  color: #25D366;
+  transition: transform 0.25s ease, color 0.25s ease;
+}
+
+.whatsapp:hover {
+  transform: scale(1.2);
+  color: #1ebe57;
 }
 
 .form {
@@ -72,37 +120,10 @@ h2 {
 .submitBtn:hover {
   background-color: #ff3333;
 }
-.contactInfo {
+
+.successMsg {
   text-align: center;
-  margin-bottom: 30px;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.contactInfo p {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  color: #ffffff;
-  font-weight: 600;
-  font-size: 1.05rem;
-  line-height: 1.6;
-}
-
-.contactInfo a {
-  color: #ffffff;
-  text-decoration: none;
-  font-weight: 600;
-}
-
-.contactInfo a:hover {
-  color: #ff3333; /* لون hover واضح */
-}
-
-.icon {
+  color: #bfa97f;
   font-size: 1.2rem;
-  color: #ffffff;
+  margin-top: 15px;
 }
-  

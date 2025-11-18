@@ -3,9 +3,10 @@ import { useForm, ValidationError } from "@formspree/react";
 import styles from "../styles/Contact.module.css";
 import backgroundImg from "../assets/Photo1.png";
 import { FiMail, FiPhone } from "react-icons/fi";
+import { FaWhatsapp } from "react-icons/fa";
 
 const Contact = () => {
-  const [state, handleSubmit] = useForm("mwpbaykk"); // ✅ معرف Formspree الجديد
+  const [state, handleSubmit] = useForm("mwpbaykk");
 
   return (
     <section
@@ -16,19 +17,31 @@ const Contact = () => {
       <div className={styles.container}>
         <h2 className={styles.title}>تواصل معنا</h2>
 
-        {/* معلومات التواصل */}
+        {/* Contact Information */}
         <div className={styles.contactInfo}>
           <p>
             <FiMail className={styles.icon} />
             <a href="mailto:info@norm-prod.com">info@norm-prod.com</a>
           </p>
+
           <p>
             <FiPhone className={styles.icon} />
             <a href="tel:+905010655000">+90 50 106 55000</a>
+
+            {/* WhatsApp icon */}
+            <a
+              href="https://wa.me/905010655000?text=Hello%20NORM%20Production"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.whatsapp}
+              aria-label="WhatsApp"
+            >
+              <FaWhatsapp />
+            </a>
           </p>
         </div>
 
-        {/* الفورم */}
+        {/* Contact Form */}
         {!state.succeeded ? (
           <form onSubmit={handleSubmit} className={styles.form}>
             <div className={styles.formGroup}>
@@ -36,16 +49,17 @@ const Contact = () => {
                 id="name"
                 type="text"
                 name="name"
-                placeholder="الاسم"
+                placeholder="Your Name"
                 required
               />
             </div>
+
             <div className={styles.formGroup}>
               <input
                 id="email"
                 type="email"
                 name="email"
-                placeholder="البريد الإلكتروني"
+                placeholder="Your Email"
                 required
               />
               <ValidationError
@@ -54,11 +68,12 @@ const Contact = () => {
                 errors={state.errors}
               />
             </div>
+
             <div className={styles.formGroup}>
               <textarea
                 id="message"
                 name="message"
-                placeholder="اكتب رسالتك هنا..."
+                placeholder="Write your message here..."
                 required
               />
               <ValidationError
@@ -73,11 +88,11 @@ const Contact = () => {
               className={styles.submitBtn}
               disabled={state.submitting}
             >
-              {state.submitting ? "جاري الإرسال..." : "إرسال الرسالة 📩"}
+              {state.submitting ? "Sending..." : "Send Message 📩"}
             </button>
           </form>
         ) : (
-          <p className={styles.successMsg}>✅ تم إرسال رسالتك بنجاح!</p>
+          <p className={styles.successMsg}>✅ Your message has been sent!</p>
         )}
       </div>
     </section>
