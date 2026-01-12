@@ -1,7 +1,6 @@
 import React from "react";
 import { useForm, ValidationError } from "@formspree/react";
 import styles from "../styles/Contact.module.css";
-import backgroundImg from "../assets/Photo1.png";
 import { FiMail, FiPhone } from "react-icons/fi";
 import { FaWhatsapp } from "react-icons/fa";
 
@@ -9,11 +8,13 @@ const Contact = () => {
   const [state, handleSubmit] = useForm("mwpbaykk");
 
   return (
-    <section
-      className={styles.contact}
-      id="contact"
-      style={{ backgroundImage: `url(${backgroundImg})` }}
-    >
+    <section className={styles.contact}>
+      {/* 🎥 Film Grain */}
+      <div className={styles.grain} />
+
+      {/* 🔴 Red Glow */}
+      <div className={styles.redGlow} />
+
       <div className={styles.container}>
         <h2 className={styles.title}>تواصل معنا</h2>
 
@@ -28,7 +29,6 @@ const Contact = () => {
             <FiPhone className={styles.icon} />
             <a href="tel:+905010655000">+90 50 106 55000</a>
 
-            {/* WhatsApp icon */}
             <a
               href="https://wa.me/905010655000?text=Hello%20NORM%20Production"
               target="_blank"

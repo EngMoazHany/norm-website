@@ -1,14 +1,8 @@
-import React from 'react';
-import Contact from '../components/Contact';
+import React from "react";
+import Contact from "../components/Contact";
 
 const ContactPage = () => {
-  return (
-    <>
-      <div style={{ paddingTop: '100px' }}>
-        <Contact />
-      </div>
-    </>
-  );
+  return <Contact />;
 };
 
 export default ContactPage;
